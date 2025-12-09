@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Base de Datos NoSQL: Principios y Casos de Uso</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&family=Montserrat:wght@600&family=Roboto:wght@400;500&family=Open+Sans:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="shortcut icon" href="https://img.icons8.com/?size=100&id=77694&format=png&color=000000" type="image/x-icon">
+</head>
+<body>
+    <!-- Encabezado (header) -->
+    <header class="header">
+        <div class="container header-content">
+            <div class="logo-section">
+                <div class="logo">
+                    <i class="fas fa-database"></i>
+                    <span>NoSQL</span>
+                </div>
+                <div class="student-info">
+                    <h1 class="title">Base de Datos NoSQL: Principios y Casos de Uso</h1>
+                    <p class="student-name">Estudiante: Jorge Lopez Marin</p>
+                </div>
+            </div>
+            <nav class="nav-menu">
+                <a href="#presentacion">Presentación</a>
+                <a href="#introduccion">Introducción</a>
+                <a href="#desarrollo">Desarrollo</a>
+                <a href="#ejemplos">Ejemplos</a>
+                <a href="#conclusiones">Conclusiones</a>
+               <!-- From Uiverse.io by kamehame-ha --> 
+<a href="https://github.com/dashboard"><button class="button">
+  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M12 0.296997C5.37 0.296997 0 5.67 0 12.297C0 17.6 3.438 22.097 8.205 23.682C8.805 23.795 9.025 23.424 9.025 23.105C9.025 22.82 9.015 22.065 9.01 21.065C5.672 21.789 4.968 19.455 4.968 19.455C4.422 18.07 3.633 17.7 3.633 17.7C2.546 16.956 3.717 16.971 3.717 16.971C4.922 17.055 5.555 18.207 5.555 18.207C6.625 20.042 8.364 19.512 9.05 19.205C9.158 18.429 9.467 17.9 9.81 17.6C7.145 17.3 4.344 16.268 4.344 11.67C4.344 10.36 4.809 9.29 5.579 8.45C5.444 8.147 5.039 6.927 5.684 5.274C5.684 5.274 6.689 4.952 8.984 6.504C9.944 6.237 10.964 6.105 11.984 6.099C13.004 6.105 14.024 6.237 14.984 6.504C17.264 4.952 18.269 5.274 18.269 5.274C18.914 6.927 18.509 8.147 18.389 8.45C19.154 9.29 19.619 10.36 19.619 11.67C19.619 16.28 16.814 17.295 14.144 17.59C14.564 17.95 14.954 18.686 14.954 19.81C14.954 21.416 14.939 22.706 14.939 23.096C14.939 23.411 15.149 23.786 15.764 23.666C20.565 22.092 24 17.592 24 12.297C24 5.67 18.627 0.296997 12 0.296997Z" fill="white"></path>
+  </svg>
+  <p class="text">Ir a GITHUB del creador</p>
+</button></a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Sección de Presentación -->
+    <section id="presentacion" class="presentation-section">
+        <div class="container">
+            <h2 class="section-title">Base de Datos NoSQL</h2>
+            <div class="presentation-content">
+                <div class="presentation-image animate-fade-in">
+                    <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80" alt="Representación visual de bases de datos NoSQL">
+                    <p class="image-caption">Las bases de datos NoSQL manejan datos no estructurados y semi-estructurados con gran flexibilidad.</p>
+                </div>
+                <div class="presentation-text">
+                    <h3>Transformando el Manejo de Datos Modernos</h3>
+                    <p>Las bases de datos NoSQL han revolucionado la forma en que las organizaciones almacenan, procesan y analizan grandes volúmenes de datos en la era digital actual.</p>
+                    <div class="stats">
+                        <div class="stat">
+                            <h4>+80%</h4>
+                            <p>de empresas usan NoSQL para aplicaciones críticas</p>
+                        </div>
+                        <div class="stat">
+                            <h4>100x</h4>
+                            <p>más rápido en consultas específicas</p>
+                        </div>
+                        <div class="stat">
+                            <h4>∞</h4>
+                            <p>escalabilidad horizontal ilimitada</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Introducción -->
+    <section id="introduccion" class="introduction-section">
+        <div class="container">
+            <h2 class="section-title">Introducción</h2>
+            <div class="introduction-content">
+                <div class="text-content">
+                    <h3>¿Qué son las Bases de Datos NoSQL?</h3>
+                    <p>Las bases de datos NoSQL (Not Only SQL) son sistemas de gestión de bases de datos que proporcionan un mecanismo para almacenar y recuperar datos que no siguen el modelo relacional tradicional.</p>
+                    
+                    <p>A diferencia de las bases de datos SQL tradicionales, las bases de datos NoSQL están diseñadas para manejar grandes volúmenes de datos no estructurados y semi-estructurados, ofreciendo mayor flexibilidad y escalabilidad horizontal.</p>
+                    
+                    <h3>¿Por qué son importantes?</h3>
+                    <p>En la era del Big Data, las aplicaciones modernas generan cantidades masivas de datos que no encajan bien en el modelo tabular rígido de las bases de datos relacionales. Las bases de datos NoSQL permiten:</p>
+                    
+                    <div class="importance-list">
+                        <div class="importance-item">
+                            <i class="fas fa-bolt"></i>
+                            <div>
+                                <h4>Alto rendimiento</h4>
+                                <p>Procesamiento rápido de grandes volúmenes de datos en tiempo real</p>
+                            </div>
+                        </div>
+                        <div class="importance-item">
+                            <i class="fas fa-expand-arrows-alt"></i>
+                            <div>
+                                <h4>Escalabilidad horizontal</h4>
+                                <p>Distribución de datos en múltiples servidores sin afectar el rendimiento</p>
+                            </div>
+                        </div>
+                        <div class="importance-item">
+                            <i class="fas fa-shield-alt"></i>
+                            <div>
+                                <h4>Alta disponibilidad</h4>
+                                <p>Tolerancia a fallos y redundancia de datos</p>
+                            </div>
+                        </div>
+                        <div class="importance-item">
+                            <i class="fas fa-cogs"></i>
+                            <div>
+                                <h4>Flexibilidad de esquema</h4>
+                                <p>Estructuras de datos dinámicas que pueden evolucionar rápidamente</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="image-content animate-slide-in">
+                    <img src="https://images.unsplash.com/photo-1627398242454-45a1465c2479?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Visualización de datos no estructurados">
+                    <p class="image-caption">Los datos no estructurados representan más del 80% de todos los datos empresariales actuales.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Desarrollo / Contenido -->
+    <section id="desarrollo" class="development-section">
+        <div class="container">
+            <h2 class="section-title">Desarrollo / Contenido</h2>
+            
+            <div class="development-content">
+                <div class="subtopics">
+                    <h3>Subtemas y Conceptos Clave</h3>
+                    
+                    <div class="subtopic">
+                        <h4><i class="fas fa-project-diagram"></i> Tipos de Bases de Datos NoSQL</h4>
+                        <ul>
+                            <li><strong>Documentales:</strong> Almacenan datos en documentos similares a JSON (MongoDB, CouchDB)</li>
+                            <li><strong>Clave-Valor:</strong> Almacenan datos como pares clave-valor (Redis, DynamoDB)</li>
+                            <li><strong>Columnas:</strong> Organizan datos por columnas en lugar de filas (Cassandra, HBase)</li>
+                            <li><strong>Grafos:</strong> Almacenan datos como nodos y relaciones (Neo4j, Amazon Neptune)</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="subtopic">
+                        <h4><i class="fas fa-tools"></i> Componentes y Herramientas</h4>
+                        <ul>
+                            <li><strong>MongoDB:</strong> Base de datos de documentos más popular</li>
+                            <li><strong>Cassandra:</strong> Base de datos de columnas para grandes volúmenes</li>
+                            <li><strong>Redis:</strong> Almacén de estructura de datos en memoria</li>
+                            <li><strong>Neo4j:</strong> Base de datos de grafos líder</li>
+                            <li><strong>Apache HBase:</strong> Base de datos NoSQL en Hadoop</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="comparison">
+                    <h3>Ventajas y Desventajas</h3>
+                    
+                    <div class="table-container">
+                        <table class="comparison-table">
+                            <thead>
+                                <tr>
+                                    <th>Aspecto</th>
+                                    <th>Ventajas</th>
+                                    <th>Desventajas</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Escalabilidad</td>
+                                    <td>Escalabilidad horizontal fácil</td>
+                                    <td>Mayor complejidad en la distribución</td>
+                                </tr>
+                                <tr>
+                                    <td>Esquema</td>
+                                    <td>Flexible y dinámico</td>
+                                    <td>Sin integridad referencial automática</td>
+                                </tr>
+                                <tr>
+                                    <td>Rendimiento</td>
+                                    <td>Alto rendimiento en consultas específicas</td>
+                                    <td>Menor rendimiento en consultas complejas</td>
+                                </tr>
+                                <tr>
+                                    <td>Consistencia</td>
+                                    <td>Consistencia eventual para mayor disponibilidad</td>
+                                    <td>No garantiza consistencia fuerte inmediata</td>
+                                </tr>
+                                <tr>
+                                    <td>Complejidad</td>
+                                    <td>Simple para datos no estructurados</td>
+                                    <td>Curva de aprendizaje para desarrolladores SQL</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    
+                    <div class="development-image animate-fade-in">
+                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Tipos de bases de datos NoSQL">
+                        <p class="image-caption">Los diferentes tipos de bases de datos NoSQL ofrecen soluciones específicas para distintos casos de uso.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Ejemplos o casos prácticos -->
+    <section id="ejemplos" class="examples-section">
+        <div class="container">
+            <h2 class="section-title">Ejemplos o Casos Prácticos</h2>
+            
+            <div class="examples-content">
+                <div class="real-cases">
+                    <h3>Casos Reales de Implementación</h3>
+                    
+                    <div class="case-grid">
+                        <div class="case-card animate-slide-up">
+                            <div class="case-header">
+                                <i class="fab fa-amazon"></i>
+                                <h4>Amazon</h4>
+                            </div>
+                            <p>Utiliza DynamoDB para el carrito de compras, ya que maneja millones de operaciones de lectura/escritura con baja latencia.</p>
+                        </div>
+                        
+                        <div class="case-card animate-slide-up">
+                            <div class="case-header">
+                                <i class="fab fa-facebook"></i>
+                                <h4>Facebook</h4>
+                            </div>
+                            <p>Emplea Cassandra para almacenar mensajes de Facebook, debido a su capacidad de escalar horizontalmente a nivel global.</p>
+                        </div>
+                        
+                        <div class="case-card animate-slide-up">
+                            <div class="case-header">
+                                <i class="fab fa-netflix"></i>
+                                <h4>Netflix</h4>
+                            </div>
+                            <p>Usa varias bases de datos NoSQL como Cassandra para catálogos y DynamoDB para recomendaciones personalizadas.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="comparisons">
+                    <h3>Comparaciones y Ejemplos Funcionales</h3>
+                    
+                    <div class="comparison-example">
+                        <h4>Almacenamiento de Perfiles de Usuario</h4>
+                        <div class="code-comparison">
+                            <div class="code-block">
+                                <h5>En SQL (Relacional)</h5>
+                                <pre><code>CREATE TABLE users (
+    id INT PRIMARY KEY,
+    name VARCHAR(100),
+    email VARCHAR(100)
+);
+
+CREATE TABLE user_preferences (
+    user_id INT,
+    preference_key VARCHAR(50),
+    preference_value TEXT,
+    FOREIGN KEY (user_id) REFERENCES users(id)
+);</code></pre>
+                            </div>
+                            <div class="code-block">
+                                <h5>En NoSQL (Documental - MongoDB)</h5>
+                                <pre><code>{
+    "_id": "507f1f77bcf86cd799439011",
+    "name": "Juan Pérez",
+    "email": "juan@email.com",
+    "preferences": {
+        "theme": "dark",
+        "notifications": true,
+        "language": "es"
+    }
+}</code></pre>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="example-image animate-fade-in">
+                        <img src="https://images.unsplash.com/photo-1635070041078-e363dbe005cb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Implementación de bases de datos NoSQL en empresas">
+                        <p class="image-caption">Grandes empresas tecnológicas utilizan bases de datos NoSQL para manejar sus datos a escala global.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Conclusiones -->
+    <section id="conclusiones" class="conclusions-section">
+        <div class="container">
+            <h2 class="section-title">Conclusiones</h2>
+            
+            <div class="conclusions-content">
+                <div class="key-ideas">
+                    <h3>Ideas Clave</h3>
+                    <ul>
+                        <li><i class="fas fa-check-circle"></i> Las bases de datos NoSQL son esenciales para manejar datos no estructurados y semi-estructurados en la era del Big Data</li>
+                        <li><i class="fas fa-check-circle"></i> Ofrecen escalabilidad horizontal que permite crecer sin límites añadiendo más servidores</li>
+                        <li><i class="fas fa-check-circle"></i> Proporcionan mayor flexibilidad al permitir esquemas dinámicos que pueden evolucionar con las necesidades de la aplicación</li>
+                        <li><i class="fas fa-check-circle"></i> Optimizan el rendimiento para casos de uso específicos, aunque sacrifican algunas características de las bases de datos relacionales</li>
+                        <li><i class="fas fa-check-circle"></i> Son la elección predominante para aplicaciones web modernas, móviles, IoT y análisis en tiempo real</li>
+                    </ul>
+                </div>
+                
+                <div class="industry-importance">
+                    <h3>Importancia en la Industria Actual</h3>
+                    <p>Las bases de datos NoSQL han transformado radicalmente la industria tecnológica, permitiendo a las empresas manejar los volúmenes masivos de datos generados por aplicaciones modernas.</p>
+                    
+                    <div class="industry-stats">
+                        <div class="industry-stat">
+                            <div class="stat-circle">
+                                <span>95%</span>
+                            </div>
+                            <p>de las empresas Fortune 100 utilizan bases de datos NoSQL</p>
+                        </div>
+                        <div class="industry-stat">
+                            <div class="stat-circle">
+                                <span>60%</span>
+                            </div>
+                            <p>del mercado de bases de datos será NoSQL para 2025</p>
+                        </div>
+                        <div class="industry-stat">
+                            <div class="stat-circle">
+                                <span>10x</span>
+                            </div>
+                            <p>más rápido el crecimiento vs bases de datos relacionales</p>
+                        </div>
+                    </div>
+                    
+                    <p>El futuro apunta hacia bases de datos multimodelo que combinan lo mejor de SQL y NoSQL, ofreciendo flexibilidad sin sacrificar consistencia cuando es necesaria.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pie de página (footer) -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-info">
+                    <p><i class="far fa-copyright"></i> Derechos reservados: SnakeDev</p>
+                    <p><i class="fas fa-user"></i> Nombre del estudiante: Jorge Rafael Lopez Marin</p>
+                    <p><i class="far fa-calendar-alt"></i> Año: 2025</p>
+                </div>
+                <div class="footer-logo">
+                    <i class="fas fa-database"></i>
+                    <span>NoSQL</span>
+                </div>
+                <div class="footer-course">
+                    <p>COM22 Producción Multimedial</p>
+                    <p>Práctica Final - Esquema Estándar del Sitio</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
